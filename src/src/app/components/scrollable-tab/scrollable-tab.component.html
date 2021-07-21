@@ -1,0 +1,15 @@
+<ul>
+  <li *ngFor="let menu of menus; let i = index">
+    <a
+      href="#"
+      [class.active]="i === selectedIndex"
+      (click)="handleSelection(i)"
+    >
+      {{ menu.title }}
+    </a>
+    <!-- 我们可以按之前的做法写成动态绑定样式，也能一样实现效果，但这种写法会生成一些无用 span 节点 -->
+    <!-- <span [class.indicator]="selectedIndex === i"></span> -->
+    <!-- ngIf 指令用于条件判断是否渲染改元素 -->
+    <span class="indicator" *ngIf="i === selectedIndex"></span>
+  </li>
+</ul>

@@ -1,0 +1,11 @@
+<ul>
+  <li *ngFor="let menu of menus; let i = index">
+    <a href="#" [class.active]="i === selectedIndex" (click)="handleSelection(i)">
+      {{ menu.title }}
+    </a>
+    <span class="indicator" *ngIf="i === selectedIndex else otherDisplay"></span>
+    <ng-template #otherDisplay>
+      未选中
+    </ng-template>
+  </li>
+</ul>
