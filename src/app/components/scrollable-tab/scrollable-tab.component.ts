@@ -14,7 +14,10 @@ export class ScrollableTabComponent implements OnInit {
 
   selectedIndex = -1;
   @Input() menus: TopMenu[] = [];
+  @Input() backgroundColor = '#fff';
   @Output() tabSelected = new EventEmitter();
+  @Input() titleActiveColor = 'yellow';
+  @Input() titleColor = 'blue';
   constructor() { }
 
   ngOnInit() {
